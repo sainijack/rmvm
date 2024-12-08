@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            background-color: #DDFFE6;
+        }
+        .sidebar {
+            width: 240px;
+            background-color: #f8f8f8;
+            padding-top: 20px;
+            height: 100vh;
+            position: fixed;
+        }
+        .sidebar a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #555;
+            font-size: 16px;
+            border-bottom: 1px solid #ddd;
+        }
+        .sidebar a:hover {
+            background-color: #ddd;
+        }
+        .sidebar a.active {
+            background-color: #ccc;
+            font-weight: bold;
+        }
+        .content {
+            margin-left: 260px;
+            padding: 20px;
+        }
+        .quiz-question {
+            margin: 20px 0;
+        }
+        .quiz-options {
+            margin-left: 20px;
+        }
+        .quiz-options label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #218838;
+        }
+        #result {
+            margin-top: 30px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #f8f8f8;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <a href="#">Home</a>
+    <a href="#">AI Impact Across Sectors</a>
+    <a href="#">Fun Facts</a>
+    <a href="#" class="active">Quiz</a>
+</div>
+
+<div class="content">
+    <h1><u>Are You Ready To Take A Quiz?</u></h1>
+
+    <form id="quizForm">
+        <!-- All 12 Questions -->
+        <div class="quiz-question">
+            <p>1. In which year did Deep Blue, an AI system, defeat Garry Kasparov in a game of chess?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q1" value="1995"> 1995</label>
+                <label><input type="radio" name="q1" value="1997"> 1997</label>
+                <label><input type="radio" name="q1" value="2000"> 2000</label>
+                <label><input type="radio" name="q1" value="2002"> 2002</label>
+            </div>
+        </div>
+
+        <div class="quiz-question">
+            <p>2. What was the name of the AI-generated artwork that sold for over $432,000 at Christie's auction house in 2018?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q2" value="The Last Portrait"> The Last Portrait</label>
+                <label><input type="radio" name="q2" value="Portrait of Edmond de Belamy"> Portrait of Edmond de Belamy</label>
+                <label><input type="radio" name="q2" value="Future of Art"> Future of Art</label>
+                <label><input type="radio" name="q2" value="AI Masterpiece"> AI Masterpiece</label>
+            </div>
+        </div>
+
+        <div class="quiz-question">
+            <p>3. What is one of the challenges AI faces when it tries to create humor?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q3" value="Understanding sarcasm"> Understanding sarcasm</label>
+                <label><input type="radio" name="q3" value="Timing the joke"> Timing the joke</label>
+                <label><input type="radio" name="q3" value="Identifying humor trends"> Identifying humor trends</label>
+                <label><input type="radio" name="q3" value="It often fails to match human expectations"> It often fails to match human expectations</label>
+            </div>
+        </div>
+
+        <div class="quiz-question">
+            <p>4. Which space agency uses AI to assist with spacecraft navigation, data analysis, and decision-making on Mars?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q4" value="European Space Agency (ESA)"> European Space Agency (ESA)</label>
+                <label><input type="radio" name="q4" value="NASA"> NASA</label>
+                <label><input type="radio" name="q4" value="Russian Space Agency (Roscosmos)"> Russian Space Agency (Roscosmos)</label>
+                <label><input type="radio" name="q4" value="China National Space Administration (CNSA)"> China National Space Administration (CNSA)</label>
+            </div>
+        </div>
+
+        <div class="quiz-question">
+            <p>5. AI programs that study composers like Beethoven or Mozart to create new music are an example of AI acting as a(n):</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q5" value="Athlete"> Athlete</label>
+                <label><input type="radio" name="q5" value="Engineer"> Engineer</label>
+                <label><input type="radio" name="q5" value="Artist"> Artist</label>
+                <label><input type="radio" name="q5" value="Architect"> Architect</label>
+            </div>
+        </div>
+
+        <div class="quiz-question">
+            <p>6. What role does AI play in self-driving cars?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q6" value="It controls the car’s engine"> It controls the car’s engine</label>
+                <label><input type="radio" name="q6" value="It processes data from sensors and cameras to make driving decisions"> It processes data from sensors and cameras to make driving decisions</label>
+                <label><input type="radio" name="q6" value="It designs the car’s interior"> It designs the car’s interior</label>
+                <label><input type="radio" name="q6" value="It repairs the car after accidents"> It repairs the car after accidents</label>
+            </div>
+        </div>
+
+        <div class="quiz-question">
+            <p>7. AI-powered chatbots like Woebot help with what aspect of human well-being?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q7" value="Legal advice"> Legal advice</label>
+                <label><input type="radio" name="q7" value="Health and fitness tracking"> Health and fitness tracking</label>
+                <label><input type="radio" name="q7" value="Mental health and therapy"> Mental health and therapy</label>
+                <label><input type="radio" name="q7" value="Financial planning"> Financial planning</label>
+            </div>
+        </div>
+
+        <div class="quiz-question">
+            <p>8. What type of AI technology creates hyper-realistic videos or audio of people doing or saying things they didn’t actually do?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q8" value="Deepfake"> Deepfake</label>
+                <label><input type="radio" name="q8" value="Neural Network"> Neural Network</label>
+                <label><input type="radio" name="q8" value="Quantum Computing"> Quantum Computing</label>
+                <label><input type="radio" name="q8" value="Machine Learning"> Machine Learning</label>
+            </div>
+        </div>
+
+        <div class="quiz-question">
+            <p>9. Which AI-powered tool has improved language translation by better understanding context?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q9" value="Siri"> Siri</label>
+                <label><input type="radio" name="q9" value="Google Translate"> Google Translate</label>
+                <label><input type="radio" name="q9" value="Alexa"> Alexa</label>
+                <label><input type="radio" name="q9" value="Grammarly"> Grammarly</label>
+            </div>
+        </div>
+
+        <div class="quiz-question">
+            <p>10. How can AI help predict future trends in industries like finance and healthcare?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q10" value="By analyzing large data sets and identifying patterns"> By analyzing large data sets and identifying patterns</label>
+                <label><input type="radio" name="q10" value="By making random guesses"> By making random guesses</label>
+                <label><input type="radio" name="q10" value="By consulting experts"> By consulting experts</label>
+                <label><input type="radio" name="q10" value="By taking surveys from the public"> By taking surveys from the public</label>
+            </div>
+        </div>
+
+        <div class="quiz-question">
+            <p>11. What is the "Turing Test" used for in AI?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q11" value="Measuring the speed of a computer’s processor"> Measuring the speed of a computer’s processor</label>
+                <label><input type="radio" name="q11" value="Determining if AI can pass human intelligence levels in a conversation"> Determining if AI can pass human intelligence levels in a conversation</label>
+                <label><input type="radio" name="q11" value="Testing AI’s ability to create art"> Testing AI’s ability to create art</label>
+                <label><input type="radio" name="q11" value="Checking if AI can translate languages"> Checking if AI can translate languages</label>
+            </div>
+        </div>
+
+        <div class="quiz-question">
+            <p>12. How is AI transforming farming practices?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q12" value="By predicting weather patterns"> By predicting weather patterns</label>
+                <label><input type="radio" name="q12" value="By automating fruit-picking and identifying plant diseases"> By automating fruit-picking and identifying plant diseases</label>
+                <label><input type="radio" name="q12" value="By designing new farming equipment"> By designing new farming equipment</label>
+                <label><input type="radio" name="q12" value="By conducting market research"> By conducting market research</label>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div>
+            <button type="button" class="btn" onclick="submitQuiz()">Submit</button>
+        </div>
+    </form>
+
+    <!-- Result Display -->
+    <div id="result" style="display: none;"></div>
+</div>
+
+<script>
+    function submitQuiz() {
+        // Correct answers for all 12 questions
+        const answers = {
+            q1: "1997",
+            q2: "Portrait of Edmond de Belamy",
+            q3: "Understanding sarcasm",
+            q4: "NASA",
+            q5: "Artist",
+            q6: "It processes data from sensors and cameras to make driving decisions",
+            q7: "Mental health and therapy",
+            q8: "Deepfake",
+            q9: "Google Translate",
+            q10: "By analyzing large data sets and identifying patterns",
+            q11: "Determining if AI can pass human intelligence levels in a conversation",
+            q12: "By automating fruit-picking and identifying plant diseases"
+        };
+
+        let score = 0;
+        let totalQuestions = Object.keys(answers).length;
+        let incorrectAnswers = [];
+
+        // Loop through each question and check answers
+        for (let question in answers) {
+            const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+            if (selectedOption) {
+                if (selectedOption.value === answers[question]) {
+                    score++;
+                } else {
+                    incorrectAnswers.push(question);
+                }
+            } else {
+                incorrectAnswers.push(question); // Question not attempted
+            }
+        }
+
+        // Display the result
+        const resultDiv = document.getElementById('result');
+        resultDiv.style.display = "block";
+        resultDiv.innerHTML = `
+            <h3>Quiz Result</h3>
+            <p>You scored <strong>${score}</strong> out of <strong>${totalQuestions}</strong>.</p>
+            <p>${incorrectAnswers.length > 0 ? "You missed or answered incorrectly for the following questions: " + incorrectAnswers.join(", ") : "Great job! You got all the answers correct!"}</p>
+        `;
+    }
+</script>
+
+</body>
+</html>
